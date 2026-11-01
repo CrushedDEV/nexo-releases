@@ -1,0 +1,58 @@
+name: Bug report
+description: Something in Nexo doesn't work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please check the [existing issues](https://github.com/CrushedDEV/nexo-releases/issues) first.
+        **Never paste API keys, tokens or private conversations.** For security problems, use [SECURITY.md](https://github.com/CrushedDEV/nexo-releases/blob/main/SECURITY.md) instead.
+  - type: input
+    id: version
+    attributes:
+      label: Nexo version
+      description: Shown in Settings.
+      placeholder: 0.9.8
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version
+      options: [Windows 11, Windows 10, Other]
+    validations:
+      required: true
+  - type: checkboxes
+    id: accounts
+    attributes:
+      label: Accounts involved
+      options:
+        - label: Claude subscription (Claude Code)
+        - label: ChatGPT subscription (Codex)
+        - label: API key (Anthropic, OpenAI or compatible)
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Chat, Code (agent), Accounts and sign-in, Limits and failover, Import, Skills and connectors, Updates, Interface, Other]
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Click …
+        3. See …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots, error messages or logs
+      description: For update problems, attach %TEMP%\nexo-update-splash.log.
